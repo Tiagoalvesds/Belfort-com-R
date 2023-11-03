@@ -1,0 +1,19 @@
+```{r}
+#bibliotecas
+install.packages('benford', dependencies = TRUE)
+library(benford)
+install.packages("arules", dependencies = TRUE)
+```
+
+```{r}
+install.packages("benford")
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
