@@ -1,19 +1,41 @@
 ```{r}
-#bibliotecas
-install.packages('benford', dependencies = TRUE)
+#instalando bibliotecas
+install.packages('benford')
+```
+
+```{r}
+# Importando as bibliotecas benford
+library(benford.analysis)
 library(benford)
-install.packages("arules", dependencies = TRUE)
+library(ggplot2)
+library(scales)
 ```
 
 ```{r}
-install.packages("benford")
+# Carregar o dataframe do arquivo CSV
+getwd()
+data <- read.csv("arrecadacao-estado.csv", sep=";")
+print(data)
+```
+
+
+```{r}
+# Filtrar dados pela coluna "nome_da_coluna"
+novo_dataframe <- subset(data, UF == "SP")
+print(novo_dataframe)
+
 ```
 
 ```{r}
+# Execute a análise de Benford's Law para a primeira coluna do seu dataframe
 
-```
+resultado <-benford(novo_dataframe$IRPF)
 
-```{r}
 
+# Visualize os resultados
+print(resultado)
+
+# Você também pode plotar os resultados para uma melhor visualização
+plot(resultado)
 ```
 
